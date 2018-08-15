@@ -36,7 +36,7 @@ class Placeholder extends AbstractHelper
      * Placeholder helper
      *
      * @param  string $name
-     * @return Placeholder\Container\AbstractContainer|Placeholder
+     * @return Placeholder\Container\AbstractContainer|self
      */
     public function __invoke($name = null)
     {
