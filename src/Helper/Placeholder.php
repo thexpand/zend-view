@@ -9,7 +9,6 @@
 
 namespace Zend\View\Helper;
 
-use Zend\View\Exception\InvalidArgumentException;
 use Zend\View\Helper\Placeholder\Container;
 
 /**
@@ -37,15 +36,12 @@ class Placeholder extends AbstractHelper
      * Placeholder helper
      *
      * @param  string $name
-     * @throws InvalidArgumentException
-     * @return Placeholder\Container\AbstractContainer
+     * @return Placeholder\Container\AbstractContainer|Placeholder
      */
     public function __invoke($name = null)
     {
         if ($name === null) {
-            throw new InvalidArgumentException(
-                'Placeholder: missing argument. $name is required by placeholder($name)'
-            );
+            return $this;
         }
 
         $name = (string) $name;
