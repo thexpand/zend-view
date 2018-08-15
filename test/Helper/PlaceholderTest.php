@@ -62,6 +62,17 @@ class PlaceholderTest extends TestCase
     /**
      * @return void
      */
+    public function testContainerExists()
+    {
+        $this->placeholder->__invoke('foo');
+        $containerExists = $this->placeholder->__invoke()->containerExists('foo');
+
+        $this->assertTrue($containerExists);
+    }
+
+    /**
+     * @return void
+     */
     public function testPlaceholderRetrievesContainer()
     {
         $container = $this->placeholder->__invoke('foo');
