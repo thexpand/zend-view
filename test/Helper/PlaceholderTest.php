@@ -71,6 +71,15 @@ class PlaceholderTest extends TestCase
     /**
      * @return void
      */
+    public function testPlaceholderRetrievesItself()
+    {
+        $container = $this->placeholder->__invoke();
+        $this->assertSame($container, $this->placeholder);
+    }
+
+    /**
+     * @return void
+     */
     public function testPlaceholderRetrievesSameContainerOnSubsequentCalls()
     {
         $container1 = $this->placeholder->__invoke('foo');
